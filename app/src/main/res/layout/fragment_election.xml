@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android.politicalpreparedness.election.ElectionsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.politicalpreparedness.MainActivity">
+
+
+        <TextView
+            android:id="@+id/upcoming_election_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/upcoming_election_string"
+            android:textSize="18sp"
+            android:textColor="@color/gray50"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/upcoming_election_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:padding="2dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_election_header"
+            app:listElection="@{viewModel.electionList}" />
+
+        <TextView
+            android:id="@+id/saved_election_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/saved_election_string"
+            android:textColor="@color/gray50"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_election_recycleView" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/saved_election_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:padding="2dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saved_election_header"
+            app:listElection="@{viewModel.savedElectionList}" />
+
+        <ImageView
+            android:id="@+id/election_progressbar"
+            android:layout_width="150dp"
+            android:src="@drawable/loading_animation"
+            android:layout_height="150dp"
+            app:listStatus="@{viewModel.status}"
+            app:layout_constraintBottom_toBottomOf="@+id/upcoming_election_recycleView"
+            app:layout_constraintEnd_toEndOf="@+id/upcoming_election_recycleView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/upcoming_election_recycleView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

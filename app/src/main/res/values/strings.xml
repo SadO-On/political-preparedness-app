@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Political Preparedness</string>
+    <string name="upcoming_election_string">UPCOMING ELECTION</string>
+    <string name="find_representative">FIND REPRESENTATIVE</string>
+    <string name="saved_election_string">SAVED ELECTION</string>
+    <string name="election_information">Election Information</string>
+    <string name="voting_location">Voting Location</string>
+    <string name="ballot_information">Ballot Information</string>
+    <string name="follow_election">FOLLOW ELECTION</string>
+    <string name="unFollow_election">UNFOLLOW ELECTION</string>
+    <string name="representative_search">Representative Search</string>
+    <string name="find_my_representative">FIND MY REPRESENTATIVE</string>
+    <string name="search_by_location">SEARCH BY LOCATION</string>
+    <string name="address_hint_1">Address Line 1</string>
+    <string name="my_representative">My Representatives</string>
+    <string name="address_line_2">Address Line 2</string>
+
+</resources>
